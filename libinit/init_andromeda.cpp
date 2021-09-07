@@ -29,6 +29,7 @@
 
 #include <cstdlib>
 #include <string.h>
+#include <sys/sysinfo.h>
 
 #define _REALLY_INCLUDE_SYS__SYSTEM_PROPERTIES_H_
 #include <sys/_system_properties.h>
@@ -50,6 +51,34 @@ void property_override(char const prop[], char const value[], bool add = true)
         __system_property_add(prop, strlen(prop), value, strlen(value));
 }
 
+void set_dalvik_heap() {
+    struct sysinfo sys;
+
+    sysinfo(&sys);
+
+    char const *heapstartsize;
+    char const *heapgrowthlimit;
+    char const *heapsize;
+    char const *heapminfree;
+    char const *heapmaxfree;
+    char const *heaptargetutilization;
+
+    // from - phone-xhdpi-6144-dalvik-heap.mk
+    heapstartsize = "16m";
+    heapgrowthlimit = "256m";
+    heapsize = "512m";
+    heaptargetutilization = "0.5";
+    heapminfree = "8m";
+    heapmaxfree = "32m";
+
+    property_override("dalvik.vm.heapstartsize", heapstartsize);
+    property_override("dalvik.vm.heapgrowthlimit", heapgrowthlimit);
+    property_override("dalvik.vm.heapsize", heapsize);
+    property_override("dalvik.vm.heaptargetutilization", heaptargetutilization);
+    property_override("dalvik.vm.heapminfree", heapminfree);
+    property_override("dalvik.vm.heapmaxfree", heapmaxfree);
+}
+
 void vendor_load_properties() {
     property_override("ro.build.fingerprint", "google/raven/raven:12/SQ1D.220205.003/8069835:user/release-keys");
     property_override("ro.build.description", "andromeda-user 9 PKQ1.190321.001 V10.3.23.0.PEMEUXM release-keys");
@@ -57,4 +86,6 @@ void vendor_load_properties() {
     // Safetyet Workaround
     property_override("ro.boot.verifiedbootstate", "green");
     property_override("ro.oem_unlock_supported", "0");
+
+    set_dalvik_heap();
 }
