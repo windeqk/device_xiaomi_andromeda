@@ -51,4 +51,6 @@ void property_override(char const prop[], char const value[], bool add = true)
 }
 
 void vendor_load_properties() {
+    property_override("ro.build.fingerprint", "google/raven/raven:12/SQ1D.220205.003/8069835:user/release-keys");
+    property_override("ro.build.description", "andromeda-user 9 PKQ1.190321.001 V10.3.23.0.PEMEUXM release-keys");
 }
