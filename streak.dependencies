@@ -5,7 +5,6 @@
     "branch":      "twelve"
   },
   {
-    "remote": "pixel-devices-blobs",
     "repository":  "vendor_xiaomi_andromeda",
     "target_path": "vendor/xiaomi/andromeda",
     "branch":      "twelve"
