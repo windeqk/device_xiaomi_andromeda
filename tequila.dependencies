@@ -1,0 +1,13 @@
+[
+  {
+    "repository":  "platform_kernel_xiaomi_andromeda",
+    "target_path": "kernel/xiaomi/andromeda",
+    "branch":      "sombrero"
+  },
+  {
+    "repository":  "platform_vendor_xiaomi_andromeda",
+    "target_path": "vendor/xiaomi/andromeda",
+    "branch":      "sombrero",
+    "remote":      "tequila-gitlab"
+  }
+]

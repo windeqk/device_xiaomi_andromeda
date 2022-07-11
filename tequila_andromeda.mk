@@ -9,14 +9,14 @@ $(call inherit-product, $(SRC_TARGET_DIR)/product/core_64_bit.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/full_base_telephony.mk)
 $(call inherit-product, $(SRC_TARGET_DIR)/product/product_launched_with_p.mk)
 
-# Inherit some common ProjectStreak stuff
-$(call inherit-product, vendor/streak/config/common_full_phone.mk)
+# Inherit some common tequilaOS stuff
+$(call inherit-product, vendor/tequila/config/common_full_phone.mk)
 
 # Inherit from andromeda device
 $(call inherit-product, $(LOCAL_PATH)/device.mk)
 
 # Device identifier. This must come after all inclusions.
-PRODUCT_NAME := streak_andromeda
+PRODUCT_NAME := tequila_andromeda
 PRODUCT_DEVICE := andromeda
 PRODUCT_BRAND := Xiaomi
 PRODUCT_MODEL := Mi MIX 3 5G
