@@ -44,6 +44,7 @@ BOARD_KERNEL_CMDLINE += service_locator.enable=1
 BOARD_KERNEL_CMDLINE += firmware_class.path=/vendor/firmware_mnt/image
 BOARD_KERNEL_CMDLINE += loop.max_part=7
 BOARD_KERNEL_CMDLINE += kpti=off
+BOARD_KERNEL_CMDLINE += androidboot.selinux=permissive
 BOARD_KERNEL_IMAGE_NAME := Image-dtb
 BOARD_KERNEL_PAGESIZE := 4096
 BOARD_KERNEL_SEPARATED_DTBO := true
@@ -194,6 +195,7 @@ VENDOR_SECURITY_PATCH := 2020-01-01
 # Sepolicy
 include device/qcom/sepolicy_vndr/SEPolicy.mk
 include device/xiaomi/andromeda/sepolicy/sepolicy.mk
+SELINUX_IGNORE_NEVERALLOWS := true
 
 # System properties
 TARGET_SYSTEM_PROP += $(DEVICE_PATH)/system.prop
