@@ -30,14 +30,16 @@
 
     <uses-sdk
         android:minSdkVersion="24"
-        android:targetSdkVersion="24"/>
+        android:targetSdkVersion="24"
+        />
 
     <application
         android:label="@string/device_settings_app_name"
-        android:persistent="true">
-
+        android:persistent="true"
+        >
+<!--
         <provider 
-            tools:replace="android:authorities"/>
+            tools:replace="android:authorities"/> -->
 
         <receiver android:name=".BootCompletedReceiver">
             <intent-filter android:priority="1000">
