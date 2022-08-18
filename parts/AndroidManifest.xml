@@ -17,6 +17,7 @@
 -->
 <manifest xmlns:android="http://schemas.android.com/apk/res/android"
     package="org.lineageos.settings"
+    xmlns:tools="http://schemas.android.com/tools"
     android:versionCode="1"
     android:versionName="1.0"
     android:sharedUserId="android.uid.system">
@@ -34,6 +35,9 @@
     <application
         android:label="@string/device_settings_app_name"
         android:persistent="true">
+
+        <provider 
+            tools:replace="android:authorities"/>
 
         <receiver android:name=".BootCompletedReceiver">
             <intent-filter android:priority="1000">
