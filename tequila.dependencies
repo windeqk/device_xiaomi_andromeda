@@ -1,0 +1,13 @@
+[
+  {
+    "repository":  "platform_kernel_xiaomi_andromeda",
+    "target_path": "kernel/xiaomi/andromeda",
+    "branch":      "tobacco"
+  },
+  {
+    "remote": "tequila-gitlab",
+    "repository":  "platform_vendor_xiaomi_andromeda",
+    "target_path": "vendor/xiaomi/andromeda",
+    "branch":      "tobacco"
+  }
+]

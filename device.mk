@@ -21,7 +21,7 @@ PRODUCT_AAPT_PREF_CONFIG := xxhdpi
 
 # Overlays
 DEVICE_PACKAGE_OVERLAYS += \
-    $(LOCAL_PATH)/overlay-pe
+    $(LOCAL_PATH)/overlay-tequila
 
 PRODUCT_ENFORCE_RRO_TARGETS := *
 
